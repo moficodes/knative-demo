@@ -1,0 +1,5 @@
+hey -c 5 -z 20s "http://fib-knative-kn-demo.mofi-workshop.us-east.containers.appdomain.cloud/20"
+
+hey -c 50 -z 20s "http://fib-knative-kn-demo.mofi-workshop.us-east.containers.appdomain.cloud/20"
+
+hey -c 200 -z 20s "http://fib-knative-kn-demo.mofi-workshop.us-east.containers.appdomain.cloud/20"
