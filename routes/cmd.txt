@@ -1,9 +1,0 @@
-knctl deploy \
-    --service fib-knative \
-    --git-url https://github.com/IBM/fib-knative \
-    --git-revision vnext \
-    --service-account build-bot \
-    --image us.icr.io/mofi/fib-knative:v2 \
-    --managed-route=false
-
-knctl revisions list
