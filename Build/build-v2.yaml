@@ -1,0 +1,15 @@
+apiVersion: build.knative.dev/v1alpha1
+kind: Build
+metadata:
+  name: kaniko-build-v2
+spec:
+  serviceAccountName: build-bot
+  source:
+    git:
+      url: https://github.com/IBM/fib-knative.git
+      revision: vnext
+  template:
+    name: kaniko
+    arguments:
+    - name: IMAGE
+      value: us.icr.io/mofi/fib-knative:build-2

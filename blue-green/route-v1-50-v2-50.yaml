@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Route
+metadata:
+  name: fib-knative-route
+  namespace: default
+spec:
+  traffic:
+  - configurationName: fib-knative-config-v1
+    percent: 50
+  - configurationName: fib-knative-config-v2
+    percent: 50
+    name: v2
