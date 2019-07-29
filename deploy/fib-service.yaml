@@ -6,15 +6,9 @@ spec:
   runLatest:
     configuration:
       revisionTemplate:
-<<<<<<< HEAD
-        spec:
-          container:
-            image: docker.io/ibmcom/fib-knative
-=======
         metadata:
           annotations:
             autoscaling.knative.dev/target: "10"
         spec:
           container:
             image: moficodes/fib-knative:v0
->>>>>>> refs/remotes/origin/master
