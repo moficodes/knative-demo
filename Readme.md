@@ -102,48 +102,6 @@ kubectl apply -f build-v2.yaml
 ibmcloud cr images | grep mofi/fib-knative
 ```
 
-##  Build and Deploy
-
-```text
-cd ../build-and-deploy
-```
-
-```text
-kubectl apply -f kaniko.yaml
-```
-
-```text
-kubectl get buildtemplates.build.knative.dev
-```
-
-```text
-kubectl apply -f service.yaml
-```
-
-```text
-watch kubectl get po
-```
-
-```text
-kubectl get ksvc
-```
-
-```text
-export MY_DOMAIN=
-```
-
-```text
-ibmcloud cr images | grep mofi/fib-knative
-```
-
-```text
-curl $MY_DOMAIN/5
-```
-
-```text
-kubectl delete -f service.yaml
-```
-
 ## Blue Green Deployment
 
 ```text
