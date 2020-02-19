@@ -1,16 +1,17 @@
-apiVersion: serving.knative.dev/v1alpha1
+apiVersion: serving.knative.dev/v1
 kind: Configuration
 metadata:
-  name: fib-knative-config-v1
-  namespace: default
+  name: fib-knative-config
 spec:
-  revisionTemplate:
-    metadata:
+  template:
+    metadata: 
       labels:
         knative.dev/type: container
       annotations:
         autoscaling.knative.dev/target: "10"
     spec:
-      container:
-        image: us.icr.io/mofi/fib-knative:build-1
-        imagePullPolicy: Always
+      containers:
+        - image: us.icr.io/mofi-cr/fib-knative:v1
+          env:
+            - name: version
+              value: v1

@@ -62,7 +62,7 @@ kubectl delete -f fib-service.yaml
 kubectl create secret docker-registry ibm-cr-secret \
 --docker-server=https://us.icr.io \
 --docker-username=iamapikey \
---docker-password=<base64secret> \
+--docker-password=api-key \
 --docker-email="a@b.com"
 ```
 

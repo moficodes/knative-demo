@@ -1,12 +1,11 @@
-apiVersion: serving.knative.dev/v1alpha1
+apiVersion: serving.knative.dev/v1
 kind: Route
 metadata:
-  name: fib-knative-route
-  namespace: default
+  name: fib-knative-route # Route name is unchanged, since we're updating an existing Route
 spec:
   traffic:
-  - configurationName: fib-knative-config-v1
-    percent: 100
-  - configurationName: fib-knative-config-v2
-    percent: 0
-    name: v2
+    - revisionName: fib-knative-config-rq25r
+      percent: 100 # All traffic still going to the first revision
+    - revisionName: fib-knative-config-plx42
+      percent: 0 # 0% of traffic routed to the second revision
+      tag: v2 # A named route
