@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: fib-knative-image-v2
+spec:
+  type: image
+  params:
+    - name: url
+      value: us.icr.io/mofi-cr/fib-knative:v2
+      #image that starts fibonacci number at 0

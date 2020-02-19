@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  name: build-docker-image-from-git-source-task-run-v2
+spec:
+  serviceAccountName: build-bot
+  taskRef:
+    name: build-docker-image-from-git-source-v2
+  inputs:
+    resources:
+      - name: docker-source
+        resourceRef:
+          name: fib-knative-git-v2
+    params:
+      - name: pathToDockerFile
+        value: Dockerfile
+      - name: pathToContext
+        value: /workspace/docker-source/
+  outputs:
+    resources:
+      - name: builtImage
+        resourceRef:
+          name: fib-knative-image-v2
